@@ -50,8 +50,14 @@ After the application has started, run the following command in another terminal
 **Run the command: Scenario 1**
 
 Scenario 1 is starting the Order Coffee process and passing in the process instance variable called `order` with a value of `Espresso`. The exclusive gateway evaluates the `order` variable and directs the token to the applicable service task.
+
 ```shell
-$ curl --location --request POST 'http://localhost:8080/rest/process-definition/key/order-coffee/start' --header 'Content-Type: application/json' --data-raw '{
+$ ./start_process_scenario_01.sh
+```
+
+The script performs the following commands:
+```shell
+$ curl --location --request POST 'http://localhost:8080/engine-rest/process-definition/key/order-coffee/start' --header 'Content-Type: application/json' --data-raw '{
      "variables": {
          "order": {
              "value": "Espresso",
@@ -68,7 +74,12 @@ The following is the output to the console after running the above command.
 
 Scenario 2 is starting the Order Coffee process and passing in the process instance variable called `order` with a value of `Caffe Mocha`. The exclusive gateway evaluates the `order` variable and directs the token to the applicable service task.
 ```shell
-$ curl --location --request POST 'http://localhost:8080/rest/process-definition/key/order-coffee/start' --header 'Content-Type: application/json' --data-raw '{
+$ ./start_process_scenario_02.sh
+```
+
+The script performs the following commands:
+```shell
+$ curl --location --request POST 'http://localhost:8080/engine-rest/process-definition/key/order-coffee/start' --header 'Content-Type: application/json' --data-raw '{
      "variables": {
          "order": {
              "value": "Caffe Mocha",
@@ -85,7 +96,11 @@ The following is the output to the console after running the above command.
 
 Scenario 3 is starting the Order Coffee process and passing in the process instance variable called `order` with a value of `Nothing`. The exclusive gateway evaluates the `order` variable and directs the token to the applicable service task.
 ```shell
-$ curl --location --request POST 'http://localhost:8080/rest/process-definition/key/order-coffee/start' --header 'Content-Type: application/json' --data-raw '{
+$ ./start_process_scenario_03.sh
+```
+The script performs the following commands:
+```shell
+$ curl --location --request POST 'http://localhost:8080/engine-rest/process-definition/key/order-coffee/start' --header 'Content-Type: application/json' --data-raw '{
      "variables": {
          "order": {
              "value": "Nothing",
